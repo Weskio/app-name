@@ -1,0 +1,31 @@
+<div class="ml-24">
+    <p class="font-bold  text-3xl mt-8">Todo App</p>
+
+    <form (ngSubmit)="onSubmit(taskForm)" #taskForm="ngForm">
+        <input type="text" placeholder="Create a todo" class="mt-8 p-3 border w-60" ngModel name="task"/><br/>
+        <button class="mt-4 p-2 border bg-indigo-500 text-white">Submit</button>
+    </form>
+
+    <table class="ml-4 mt-16 mb-16 table-auto">
+        <thead>
+            <tr class="font-semibold ">
+                <th class="pr-16">Task</th>
+                <th class="pr-16">Completed</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let t of listArray; index as i">
+                <td class="">{{t.taskName}}</td>
+                <td class=""><input type="radio" class="ml-8" /></td>
+                <td class="p-1.5  bg-red-500 rounded-sm text-white "><button (click)= 'onDelete(i)'>Delete</button></td>
+            </tr>
+        </tbody>
+
+
+    </table>
+</div>
+
+
+
