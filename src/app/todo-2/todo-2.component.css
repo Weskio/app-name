@@ -1,0 +1,9 @@
+body{
+    background-color: rgb(9, 9, 105);
+}
+
+.bg{
+    background-image: url(./bg-mobile-dark.jpg);
+    width:auto;
+    height: 244px;
+}

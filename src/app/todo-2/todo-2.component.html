@@ -1,1 +1,20 @@
-<p>todo-2 works!</p>
+<div class="h-16 w-full bg relative ">
+        <p class="bg-transparent ml-8 pt-10 text-white font-bold text-3xl">Todo</p>
+    
+        <form #taskForm="ngForm" (ngSubmit)="onSubmit(taskForm)">
+            <input class="ml-6 mt-8 bg-blue-950 h-10 w-96 placeholder:pl-4 text:ml-4 text-white rounded-sm" placeholder="Enter task" ngModel name="task"/>
+        </form>
+    </div>
+    <div class="absolute w-96 ml-6 border  border-blue-950 rounded-md top-48 bg-blue-950">
+        <ul class="flex p-3  text-white">
+            <li class="mr-5 border-slate-600"><input type="radio"/></li>
+            <li class="mr-5">Brush teeth</li>
+            <li class="ml-auto"><button>X</button></li>
+        </ul>
+    
+        <ul class="flex p-3  text-white" *ngFor="let t of listArray; index as i">
+            <li class="mr-5"><input type="radio"/></li>
+            <li class="mr-5">{{t.taskName}}</li>
+            <li class="ml-auto"><button (click)="onDelete(i)">X</button></li>
+        </ul>
+    </div>
